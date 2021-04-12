@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<script type="module">
+  import init, { run } from './gen-assets/shapeworld-client-lib.js'
+  init()
+
+  window.run = run
+
+  window.connect = function(serverSocketAddr, name) {
+    run(serverSocketAddr, name)
+  }
+</script>
+
+<body>
+  <button onclick="connect('127.0.0.1:9001', 'a')">Connect 127.0.0.1:9001</button>
+  <button onclick="connect('127.0.0.1:9002', 'b')">Connect 127.0.0.1:9002</button>
+</body>
+
+</html>
